@@ -12,13 +12,13 @@ html=r.text
 soup=BeautifulSoup(html,'html5lib')
 text = soup.get_text()
 
-tokeizer= RegexpTokenizer('\w+')
+tokenizer= RegexpTokenizer('\w+')
 
 tokens= tokenizer.tokenize(text)
 
 words = []
 
-for words in tokens:
+for word in tokens:
     words.append(word.lower())
 
 sw=nltk.corpus.stopwords.words('english')
@@ -28,7 +28,6 @@ for word in words:
     if word not in sw:
         words_ns.append(word)
 
-%matplotlib inline
 sns.set()
 
 freqdist1=nltk.FreDist(words_ns)
