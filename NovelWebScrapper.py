@@ -30,5 +30,5 @@ for word in words:
 
 sns.set()
 
-freqdist1=nltk.FreDist(words_ns)
+freqdist1=nltk.FreqDist(words_ns)
 freqdist1.plot(25)
